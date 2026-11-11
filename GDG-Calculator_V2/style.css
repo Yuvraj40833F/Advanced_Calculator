@@ -1,0 +1,133 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    background-color: #0e0f13;
+    font-family: Arial, sans-serif;
+    height: 100vh;
+    height: 100dvh;
+    margin: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.calculator {
+    background-color: transparent;
+    width: 100%;
+    max-width: 440px;
+    height: 100%;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+
+}
+
+#display {
+    width: 100%;
+    height: 70px;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: white;
+    font-size: 42px;
+    text-align: right;
+
+}
+
+.display-area {
+    flex: 1;
+    min-height: 80px;
+    display: flex;
+    align-items: flex-end;
+    padding: 20px 15px;
+
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    gap: 10px;
+    padding-bottom: 10px;
+}
+
+button {
+    width: 100%;
+    aspect-ratio: 1/1;
+    border: none;
+    border-radius: 50%;
+    background-color: #24262e;
+    color:#e5e5f0;
+    font-size: clamp(20px, 6vw, 38px);
+    cursor: pointer;
+    transition: transform 0.1s, background-color 0.2s;
+
+}
+
+.utility, .operator {
+    background-color: #34394b;
+    color: #cbd5ff;
+
+}
+
+.equals {
+    background-color: #efdfff;
+    color: #343044;
+}
+
+
+
+button:active {
+    transform: scale(0.93);
+}
+
+.scientific-toggle {
+    width: 45px;
+    height: 35px;
+    aspect-ratio: auto;
+    align-self: flex-start;
+
+    border-radius: 10px;
+    padding: 12px;
+    background-color: transparent;
+    color: #cbd5ff;
+    font-size: 25px;
+    margin-bottom: 30px;
+}
+
+.scientific-buttons {
+    display: none;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+    margin-bottom: 8px;
+    
+}
+.scientific-buttons.show {
+    display: grid;
+}
+
+.scientific-buttons button {
+    aspect-ratio: auto;
+    height: 65px;
+    border-radius: 40px;
+}
+
+.scientific-open .buttons button {
+    aspect-ratio: auto;
+    height: 75px;
+    border-radius: 45px;
+}
+
+@media (min-width: 600px) {
+    body {
+        padding: 20px;
+    }
+
+    .calculator {
+        height: 90vh;
+        max-width: 420px;
+    }
+}
